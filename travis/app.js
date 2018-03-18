@@ -26,7 +26,7 @@ if (!config.FB_APP_SECRET) {
 if (!config.SERVER_URL) { //used for ink to static files
 	throw new Error('missing SERVER_URL');
 }
-if (!config.WEATHER_API_KEY) { //used for ink to static files
+if (!config.WEATHER_API_KEY) { //used for weather api key
 	throw new Error('missing WEATHER_API_KEY');
 }
 
@@ -192,7 +192,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 
 				var request = require('request');
 				request({
-					url: 'http://api.openweathermap.org/data/2.5/weather',
+					url: 'https://api.openweathermap.org/data/2.5/weather',
 					qs: { 
 						appid: config.WEATHER_API_KEY,
 						q: parameters["geo-city"]
@@ -206,7 +206,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 						}
 						else{
 							sendTextMessage(sender,
-							'No weather for ${parameters["geo-city"]}'
+							'No weather forecast available for ${parameters["geo-city"]}'
 								);
 						}
 					}
@@ -214,7 +214,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 						console.error(response.error);
 					}
 				} 
-				)
+				);
 			}
 			else{
 				sendTextMessage(sender, responseText);

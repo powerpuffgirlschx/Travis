@@ -4,5 +4,5 @@ module.exports = {
     API_AI_CLIENT_ACCESS_TOKEN: 'ef19f53b67a54f5cadae068fc862103f',
     FB_APP_SECRET: 'c3106be5cf6711bc5445d881a39c2e63',
     SERVER_URL: "https://travis-rajasthan.herokuapp.com/",
-    WEATHER_API_KEY: 'f3b7c5d36b057d9f597d6aac72d07be6',
+    WEATHER_API_KEY: 'f3b7c5d36b057d9f597d6aac72d07be6'
 };
